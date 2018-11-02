@@ -14,11 +14,12 @@ public class Jugador {
     int edad;
     String anoNacimiento;
     int numeroEstrellas;
+    int goles;
 
     public Jugador() {
     }
 
-    public Jugador(String nombre, String apodo, int numeroCamiseta, String equipoFutFav, String equipoBasFav, String jugadorFav, int edad, String anoNacimiento, int numeroEstrellas) {
+    public Jugador(String nombre, String apodo, int numeroCamiseta, String equipoFutFav, String equipoBasFav, String jugadorFav, int edad, String anoNacimiento, int numeroEstrellas, int goles) {
         this.nombre = nombre;
         this.apodo = apodo;
         this.numeroCamiseta = numeroCamiseta;
@@ -28,6 +29,15 @@ public class Jugador {
         this.edad = edad;
         this.anoNacimiento = anoNacimiento;
         this.numeroEstrellas = numeroEstrellas;
+        this.goles = goles;
+    }
+
+    public int getGoles() {
+        return goles;
+    }
+
+    public void setGoles(int goles) {
+        this.goles = goles;
     }
 
     public String getNombre() {
@@ -359,7 +369,12 @@ public class Jugador {
                                     + "7)Edad\n"
                                     + "8)Anio de Nacimiento\n"
                                     + "9)Numero de Estrellas\n"
-                                    + "10)Atras");
+                                    + "10)Habilidad Pateadora\n"
+                                    + "11)Hablididad Regateadora\n"
+                                    + "12)Fuerza\n"
+                                    + "13)Tiro 3\n"
+                                    + "14)Tiro 2\n"
+                                    + "15)Manejo de Balon");
                             System.out.print("Ingrese su opcion: ");
                             int opcionModificar = sc.nextInt();
                         }
