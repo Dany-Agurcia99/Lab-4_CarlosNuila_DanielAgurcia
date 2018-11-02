@@ -359,7 +359,12 @@ public class Jugador {
                                     + "7)Edad\n"
                                     + "8)Anio de Nacimiento\n"
                                     + "9)Numero de Estrellas\n"
-                                    + "10)Atras");
+                                    + "10)Habilidad Pateadora\n"
+                                    + "11)Hablididad Regateadora\n"
+                                    + "12)Fuerza\n"
+                                    + "13)Tiro 3\n"
+                                    + "14)Tiro 2\n"
+                                    + "15)Manejo de Balon");
                             System.out.print("Ingrese su opcion: ");
                             int opcionModificar = sc.nextInt();
                         }
