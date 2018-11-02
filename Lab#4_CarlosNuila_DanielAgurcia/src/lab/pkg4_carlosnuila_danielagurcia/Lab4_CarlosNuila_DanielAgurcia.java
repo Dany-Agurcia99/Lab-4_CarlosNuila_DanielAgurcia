@@ -85,7 +85,7 @@ public class Lab4_CarlosNuila_DanielAgurcia {
                 int opcionTiro = sc.nextInt();
                 switch (opcionTiro) {
                     case 2:
-                        if (num < JugadorConBalon.Atacar()) {
+                        if (num < JugadorConBalon.Atacar(2)) {
                             System.out.println(JugadorConBalon.getApodo() + " ANOTOO!!!");
                             if (EquipoActual == EquipoJ1) {
                                 golesJ1++;
