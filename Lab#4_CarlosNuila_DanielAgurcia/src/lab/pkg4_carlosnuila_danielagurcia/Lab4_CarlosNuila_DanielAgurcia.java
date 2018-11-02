@@ -10,12 +10,7 @@ public class Lab4_CarlosNuila_DanielAgurcia {
     public static Random r = new Random();
 
     public static void main(String[] args) {
-        ArrayList<Equipo> Listaequipos = new ArrayList();
-        Equipo Madrid = new Equipo();
-        Equipo Barcelona = new Equipo();
-        String nombre1 = "daniel";
-        String nombre2 = "nuila";
-        Jugar(Barcelona, Barcelona, nombre1, nombre1);
+
     }
 
     public static void Jugar(Equipo EquipoJ1, Equipo EquipoJ2, String NombreJ1, String NombreJ2) {
@@ -90,8 +85,10 @@ public class Lab4_CarlosNuila_DanielAgurcia {
                 if (num < JugadorConBalon.Atacar(0)) {
                     System.out.println(JugadorConBalon.getApodo() + " ANOTOO A LA PORTERIA!!!");
                     if (EquipoActual == EquipoJ1) {
+                        JugadorConBalon.setGoles(JugadorConBalon.getGoles() + 1);
                         golesJ1++;
                     } else {
+                        JugadorConBalon.setGoles(JugadorConBalon.getGoles() + 1);
                         golesJ2++;
                     }
                 } else {
@@ -105,8 +102,10 @@ public class Lab4_CarlosNuila_DanielAgurcia {
                         if (num < JugadorConBalon.Atacar(2)) {
                             System.out.println(JugadorConBalon.getApodo() + " ANOTOO AL AROOO!!!");
                             if (EquipoActual == EquipoJ1) {
+                                JugadorConBalon.setGoles(JugadorConBalon.getGoles() + 1);
                                 golesJ1++;
                             } else {
+                                JugadorConBalon.setGoles(JugadorConBalon.getGoles() + 1);
                                 golesJ2++;
                             }
                         } else {
@@ -117,8 +116,10 @@ public class Lab4_CarlosNuila_DanielAgurcia {
                         if (num < JugadorConBalon.Atacar(3)) {
                             System.out.println(JugadorConBalon.getApodo() + " ANOTOO AL AROOO!!!");
                             if (EquipoActual == EquipoJ1) {
+                                JugadorConBalon.setGoles(JugadorConBalon.getGoles() + 1);
                                 golesJ1++;
                             } else {
+                                JugadorConBalon.setGoles(JugadorConBalon.getGoles() + 1);
                                 golesJ2++;
                             }
                         } else {
