@@ -475,8 +475,22 @@ public class Jugador {
                                         System.out.println("No es un pateador");
                                     }
                                 }
-                                if (op) {
-
+                                if (opcionModificar == 13) {
+                                    if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Tirador) {
+                                        System.out.print("Ingrese el tiro2 del Jugador: ");
+                                        int tiro2 = sc.nextInt();
+                                        while (tiro2 < 1 || tiro2 > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la fuerza del pateador(1-100): ");
+                                            tiro2 = sc.nextInt();
+                                        }
+                                        ((Tirador) listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador)).setTiro2(tiro2);
+                                    } else {
+                                        System.out.println("No es un tirador");
+                                    }
+                                }
+                                if (opcionModificar == 14){
+                                    
                                 }
                             } else {
                                 System.out.println("No existe ese nodo");
