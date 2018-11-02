@@ -418,6 +418,14 @@ public class Jugador {
                                 if (opcionModificar == 8) {
                                     System.out.print("Ingrese el anoNacimiento del Jugador: ");
                                     String anoNacimiento = sc.next();
+                                    listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setAnoNacimiento(anoNacimiento);
+                                }
+                                if (opcionModificar == 9) {
+                                    System.out.print("Ingrese el numeroEstrella del Jugador: ");
+                                    int numeroEstrella = sc.nextInt();
+                                }
+                                if (opcionModificar == 10) {
+                                    
                                 }
                             } else {
                                 System.out.println("No existe ese nodo");
@@ -428,8 +436,8 @@ public class Jugador {
                     System.out.println("No existe ese nodo");
                 }
             }
-            if (opcionMenu == 3){
-                
+            if (opcionMenu == 3) {
+
             }
         }
     }
