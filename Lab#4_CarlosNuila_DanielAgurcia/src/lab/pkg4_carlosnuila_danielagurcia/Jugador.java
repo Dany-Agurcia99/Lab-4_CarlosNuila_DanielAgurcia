@@ -1,5 +1,8 @@
 package lab.pkg4_carlosnuila_danielagurcia;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Jugador {
 
     String nombre;
@@ -106,6 +109,67 @@ public class Jugador {
 
     public double Atacar() {
         return 0;
+    }
+
+    Scanner sc = new Scanner(System.in);
+
+    public void Menu() {
+        int opcionMenu = 0;
+        ArrayList<Equipo> listaEquipos = new ArrayList();
+        while (opcionMenu != 5) {
+            System.out.println("1)Administrar Equipo\n"
+                    + "2)Administrar Jugadores\n"
+                    + "3)Jugar\n"
+                    + "4)Salir");
+            opcionMenu = sc.nextInt();
+            if (opcionMenu == 1) {
+                int opcionEquipo = 0;
+                while (opcionEquipo != 5) {
+                    System.out.println("1)Crear Equipo\n"
+                            + "2)Modificar Equipo\n"
+                            + "3)Eliminar Equipo\n"
+                            + "4)Listar Equipo\n"
+                            + "5)Atras");
+                    System.out.print("Ingrese su opcion: ");
+                    opcionEquipo = sc.nextInt();
+                }
+                if (opcionEquipo == 1) {
+                    System.out.print("Ingrese el nombre del Equipo: ");
+                    String nombreEquipo = sc.next();
+                    System.out.print("Ingrese el estadio del Equipo: ");
+                    String estadio = sc.next();
+                    System.out.print("Ingrese el pais del Equipo: ");
+                    String pais = sc.next();
+                    System.out.print("Ingrese el nombre del entrenador del Equipo: ");
+                    String nombreEntrenador = sc.next();
+                    System.out.print("Ingrese el nombre del dueno del Equipo: ");
+                    String nombreDueno = sc.next();
+                    System.out.print("Ingrese el nombre de la mascota del Equipo: ");
+                    String nombreMascota = sc.next();
+                    System.out.print("Ingrese la fecha de creacion del Equipo: ");
+                    String fechaCreacion = sc.next();
+                    System.out.print("Ingrese el color del Equipo: ");
+                    String color = sc.next();
+                    listaEquipos.add(new Equipo(nombreEquipo, estadio, pais, nombreEntrenador, nombreDueno, nombreMascota, fechaCreacion, color));
+                }
+                if (opcionEquipo == 2) {
+                    System.out.println("1)Nombre del Equipo\n"
+                            + "2)Estadio\n"
+                            + "3)Pais\n"
+                            + "4)Nombre del Entrenador\n"
+                            + "5)Nombre del Dueno\n"
+                            + "6)Nombre de la Mascota\n"
+                            + "7)Fecha de Creacion\n"
+                            + "8)Color");
+                    System.out.print("Ingrese su opcion: ");
+                    int opcionModificar = sc.nextInt();
+                    if (opcionModificar == 1){
+                        
+                    }
+                }
+
+            }
+        }
     }
 
 }

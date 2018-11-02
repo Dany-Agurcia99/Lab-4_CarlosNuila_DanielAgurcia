@@ -102,7 +102,9 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo{" + "nombre=" + nombre + ", estadio=" + estadio + ", pais=" + pais + ", nombreEntrenador=" + nombreEntrenador + ", nombreDueno=" + nombreDueno + ", nombreMascota=" + nombreMascota + ", fechaCreacion=" + fechaCreacion + ", color=" + color + ", ListaJugadores=" + ListaJugadores + '}';
+        return "Equipo{" + "Nombre Equipo = " + nombre + "\nEstadio = " + estadio + "   Pais=" + pais + "   Nombre del Entrenador = " + nombreEntrenador + 
+                "\nNombre del Dueno = " + nombreDueno + "   Nombre de la Mascota = " + nombreMascota + "    Fecha de Creacion = " + fechaCreacion + 
+                "   Color Principal = " + color + "\nLista de Jugadores: " + ListaJugadores + '}';
     }
 
 }
