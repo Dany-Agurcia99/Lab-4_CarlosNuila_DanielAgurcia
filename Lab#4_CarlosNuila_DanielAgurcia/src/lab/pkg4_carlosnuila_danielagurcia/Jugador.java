@@ -142,106 +142,106 @@ public class Jugador {
                             + "5)Atras");
                     System.out.print("Ingrese su opcion: ");
                     opcionEquipo = sc.nextInt();
-                }
-                if (opcionEquipo == 1) {
-                    System.out.print("Ingrese el nombre del Equipo: ");
-                    String nombreEquipo = sc.next();
-                    System.out.print("Ingrese el estadio del Equipo: ");
-                    String estadio = sc.next();
-                    System.out.print("Ingrese el pais del Equipo: ");
-                    String pais = sc.next();
-                    System.out.print("Ingrese el nombre del entrenador del Equipo: ");
-                    String nombreEntrenador = sc.next();
-                    System.out.print("Ingrese el nombre del dueno del Equipo: ");
-                    String nombreDueno = sc.next();
-                    System.out.print("Ingrese el nombre de la mascota del Equipo: ");
-                    String nombreMascota = sc.next();
-                    System.out.print("Ingrese la fecha de creacion del Equipo: ");
-                    String fechaCreacion = sc.next();
-                    System.out.print("Ingrese el color del Equipo: ");
-                    String color = sc.next();
-                    listaEquipos.add(new Equipo(nombreEquipo, estadio, pais, nombreEntrenador, nombreDueno, nombreMascota, fechaCreacion, color));
-                }
-                if (opcionEquipo == 2) {
-                    System.out.print("Ingrese la posicion del equipo: ");
-                    int posicionEquipo = sc.nextInt();
-                    if (posicionEquipo >= 0 && posicionEquipo < listaEquipos.size()) {
-                        System.out.println("1)Nombre del Equipo\n"
-                                + "2)Estadio\n"
-                                + "3)Pais\n"
-                                + "4)Nombre del Entrenador\n"
-                                + "5)Nombre del Dueno\n"
-                                + "6)Nombre de la Mascota\n"
-                                + "7)Fecha de Creacion\n"
-                                + "8)Color\n"
-                                + "9)Atras");
-                        System.out.print("Ingrese su opcion: ");
-                        int opcionModificar = sc.nextInt();
+                    if (opcionEquipo == 1) {
+                        System.out.print("Ingrese el nombre del Equipo: ");
+                        String nombreEquipo = sc.next();
+                        System.out.print("Ingrese el estadio del Equipo: ");
+                        String estadio = sc.next();
+                        System.out.print("Ingrese el pais del Equipo: ");
+                        String pais = sc.next();
+                        System.out.print("Ingrese el nombre del entrenador del Equipo: ");
+                        String nombreEntrenador = sc.next();
+                        System.out.print("Ingrese el nombre del dueno del Equipo: ");
+                        String nombreDueno = sc.next();
+                        System.out.print("Ingrese el nombre de la mascota del Equipo: ");
+                        String nombreMascota = sc.next();
+                        System.out.print("Ingrese la fecha de creacion del Equipo: ");
+                        String fechaCreacion = sc.next();
+                        System.out.print("Ingrese el color del Equipo: ");
+                        String color = sc.next();
+                        listaEquipos.add(new Equipo(nombreEquipo, estadio, pais, nombreEntrenador, nombreDueno, nombreMascota, fechaCreacion, color));
+                    }
+                    if (opcionEquipo == 2) {
+                        System.out.print("Ingrese la posicion del equipo: ");
+                        int posicionEquipo = sc.nextInt();
+                        if (posicionEquipo >= 0 && posicionEquipo < listaEquipos.size()) {
+                            System.out.println("1)Nombre del Equipo\n"
+                                    + "2)Estadio\n"
+                                    + "3)Pais\n"
+                                    + "4)Nombre del Entrenador\n"
+                                    + "5)Nombre del Dueno\n"
+                                    + "6)Nombre de la Mascota\n"
+                                    + "7)Fecha de Creacion\n"
+                                    + "8)Color\n"
+                                    + "9)Atras");
+                            System.out.print("Ingrese su opcion: ");
+                            int opcionModificar = sc.nextInt();
 
-                        if (opcionModificar == 1) {
-                            System.out.print("Ingrese el nombre del Equipo: ");
-                            String nombreEquipo = sc.next();
-                            listaEquipos.get(posicionEquipo).setNombre(nombreEquipo);
-                            System.out.println("Modificacion Exitosa");
+                            if (opcionModificar == 1) {
+                                System.out.print("Ingrese el nombre del Equipo: ");
+                                String nombreEquipo = sc.next();
+                                listaEquipos.get(posicionEquipo).setNombre(nombreEquipo);
+                                System.out.println("Modificacion Exitosa");
+                            }
+                            if (opcionModificar == 2) {
+                                System.out.print("Ingrese el estadio del Equipo: ");
+                                String estadio = sc.next();
+                                listaEquipos.get(posicionEquipo).setEstadio(estadio);
+                                System.out.println("Modificacion Exitosa");
+                            }
+                            if (opcionModificar == 3) {
+                                System.out.print("Ingrese el pais del Equipo: ");
+                                String pais = sc.next();
+                                listaEquipos.get(posicionEquipo).setPais(pais);
+                                System.out.println("Modificacion Exitosa");
+                            }
+                            if (opcionModificar == 4) {
+                                System.out.print("Ingrese el nombre del entrenador del Equipo: ");
+                                String nombreEntrenador = sc.next();
+                                listaEquipos.get(posicionEquipo).setNombreEntrenador(nombreEntrenador);
+                                System.out.println("Modificacion Exitosa");
+                            }
+                            if (opcionModificar == 5) {
+                                System.out.print("Ingrese el nombreDueno del Equipo: ");
+                                String nombreDueno = sc.next();
+                                listaEquipos.get(posicionEquipo).setNombreDueno(nombreDueno);
+                                System.out.println("Modificacion Exitosa");
+                            }
+                            if (opcionModificar == 6) {
+                                System.out.print("Ingrese el nombreMascota del Equipo: ");
+                                String nombreMascota = sc.next();
+                                listaEquipos.get(posicionEquipo).setNombreMascota(nombreMascota);
+                                System.out.println("Modificacion Exitosa");
+                            }
+                            if (opcionModificar == 7) {
+                                System.out.print("Ingrese el fechaCreacion del Equipo: ");
+                                String fechaCreacion = sc.next();
+                                listaEquipos.get(posicionEquipo).setFechaCreacion(fechaCreacion);
+                                System.out.println("Modificacion Exitosa");
+                            }
+                            if (opcionModificar == 8) {
+                                System.out.print("Ingrese el color del Equipo: ");
+                                String color = sc.next();
+                                listaEquipos.get(posicionEquipo).setColor(color);
+                                System.out.println("Modificacion Exitosa");
+                            }
+                        } else {
+                            System.out.println("No existe ese nodo");
                         }
-                        if (opcionModificar == 2) {
-                            System.out.print("Ingrese el estadio del Equipo: ");
-                            String estadio = sc.next();
-                            listaEquipos.get(posicionEquipo).setEstadio(estadio);
-                            System.out.println("Modificacion Exitosa");
-                        }
-                        if (opcionModificar == 3) {
-                            System.out.print("Ingrese el pais del Equipo: ");
-                            String pais = sc.next();
-                            listaEquipos.get(posicionEquipo).setPais(pais);
-                            System.out.println("Modificacion Exitosa");
-                        }
-                        if (opcionModificar == 4) {
-                            System.out.print("Ingrese el nombre del entrenador del Equipo: ");
-                            String nombreEntrenador = sc.next();
-                            listaEquipos.get(posicionEquipo).setNombreEntrenador(nombreEntrenador);
-                            System.out.println("Modificacion Exitosa");
-                        }
-                        if (opcionModificar == 5) {
-                            System.out.print("Ingrese el nombreDueno del Equipo: ");
-                            String nombreDueno = sc.next();
-                            listaEquipos.get(posicionEquipo).setNombreDueno(nombreDueno);
-                            System.out.println("Modificacion Exitosa");
-                        }
-                        if (opcionModificar == 6) {
-                            System.out.print("Ingrese el nombreMascota del Equipo: ");
-                            String nombreMascota = sc.next();
-                            listaEquipos.get(posicionEquipo).setNombreMascota(nombreMascota);
-                            System.out.println("Modificacion Exitosa");
-                        }
-                        if (opcionModificar == 7) {
-                            System.out.print("Ingrese el fechaCreacion del Equipo: ");
-                            String fechaCreacion = sc.next();
-                            listaEquipos.get(posicionEquipo).setFechaCreacion(fechaCreacion);
-                            System.out.println("Modificacion Exitosa");
-                        }
-                        if (opcionModificar == 8) {
-                            System.out.print("Ingrese el color del Equipo: ");
-                            String color = sc.next();
-                            listaEquipos.get(posicionEquipo).setColor(color);
-                            System.out.println("Modificacion Exitosa");
-                        }
-                    } else {
-                        System.out.println("No existe ese nodo");
                     }
-                }
-                if (opcionEquipo == 3) {
-                    System.out.print("Ingrese la posicion del equipo: ");
-                    int posicionEquipo = sc.nextInt();
-                    if (posicionEquipo >= 0 && posicionEquipo < listaEquipos.size()) {
-                        listaEquipos.remove(posicionEquipo);
-                    } else {
-                        System.out.println("No existe ese nodo");
+                    if (opcionEquipo == 3) {
+                        System.out.print("Ingrese la posicion del equipo: ");
+                        int posicionEquipo = sc.nextInt();
+                        if (posicionEquipo >= 0 && posicionEquipo < listaEquipos.size()) {
+                            listaEquipos.remove(posicionEquipo);
+                        } else {
+                            System.out.println("No existe ese nodo");
+                        }
                     }
-                }
-                if (opcionEquipo == 4) {
-                    for (Equipo temp : listaEquipos) {
-                        System.out.print(temp.toString());
+                    if (opcionEquipo == 4) {
+                        for (Equipo temp : listaEquipos) {
+                            System.out.print(temp.toString());
+                        }
                     }
                 }
             }
@@ -423,9 +423,42 @@ public class Jugador {
                                 if (opcionModificar == 9) {
                                     System.out.print("Ingrese el numeroEstrella del Jugador: ");
                                     int numeroEstrella = sc.nextInt();
+                                    while (numeroEstrella < 1 || numeroEstrellas > 5) {
+                                        System.out.println("Debe ser entre 1 y 5");
+                                        System.out.print("Ingrese el numero de Estrellas del Jugador(1-5): ");
+                                        numeroEstrella = sc.nextInt();
+                                    }
+                                    listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setNumeroEstrellas(numeroEstrella);
                                 }
                                 if (opcionModificar == 10) {
-                                    
+                                    if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Pateador) {
+                                        System.out.print("Ingrese el habilidadPateadora del Jugador: ");
+                                        int habilidadPateadora = sc.nextInt();
+                                        while (habilidadPateadora < 1 || habilidadPateadora > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la habilidad pateadora del pateador(1-100): ");
+                                            habilidadPateadora = sc.nextInt();
+                                        }
+                                        listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setNumeroEstrellas(numeroEstrella);
+                                    } else {
+                                        System.out.println("No es un pateador");
+                                    }
+                                }
+                                if (opcionModificar == 11) {
+                                    if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Pateador) {
+                                        System.out.print("Ingrese el habilidadPateadora del Jugador: ");
+                                        String habilidadPateadora = sc.next();
+                                    } else {
+                                        System.out.println("No es un pateador");
+                                    }
+                                }
+                                if (opcionModificar == 12) {
+                                    if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Pateador) {
+                                        System.out.print("Ingrese el habilidadPateadora del Jugador: ");
+                                        String habilidadPateadora = sc.next();
+                                    } else {
+                                        System.out.println("No es un pateador");
+                                    }
                                 }
                             } else {
                                 System.out.println("No existe ese nodo");
