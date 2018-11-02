@@ -14,11 +14,12 @@ public class Jugador {
     int edad;
     String anoNacimiento;
     int numeroEstrellas;
+    int goles;
 
     public Jugador() {
     }
 
-    public Jugador(String nombre, String apodo, int numeroCamiseta, String equipoFutFav, String equipoBasFav, String jugadorFav, int edad, String anoNacimiento, int numeroEstrellas) {
+    public Jugador(String nombre, String apodo, int numeroCamiseta, String equipoFutFav, String equipoBasFav, String jugadorFav, int edad, String anoNacimiento, int numeroEstrellas, int goles) {
         this.nombre = nombre;
         this.apodo = apodo;
         this.numeroCamiseta = numeroCamiseta;
@@ -28,6 +29,15 @@ public class Jugador {
         this.edad = edad;
         this.anoNacimiento = anoNacimiento;
         this.numeroEstrellas = numeroEstrellas;
+        this.goles = goles;
+    }
+
+    public int getGoles() {
+        return goles;
+    }
+
+    public void setGoles(int goles) {
+        this.goles = goles;
     }
 
     public String getNombre() {
