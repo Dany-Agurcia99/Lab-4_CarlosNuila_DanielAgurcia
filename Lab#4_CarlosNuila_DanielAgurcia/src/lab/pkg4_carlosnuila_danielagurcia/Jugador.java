@@ -128,7 +128,7 @@ public class Jugador {
                     System.out.println("1)Crear Equipo\n"
                             + "2)Modificar Equipo\n"
                             + "3)Eliminar Equipo\n"
-                            + "4)Listar Equipo\n"
+                            + "4)Listar Equipos\n"
                             + "5)Atras");
                     System.out.print("Ingrese su opcion: ");
                     opcionEquipo = sc.nextInt();
@@ -220,7 +220,80 @@ public class Jugador {
                         System.out.println("No existe ese nodo");
                     }
                 }
+                if (opcionEquipo == 3) {
+                    System.out.print("Ingrese la posicion del equipo: ");
+                    int posicionEquipo = sc.nextInt();
+                    if (posicionEquipo >= 0 && posicionEquipo < listaEquipos.size()) {
+                        listaEquipos.remove(posicionEquipo);
+                    } else {
+                        System.out.println("No existe ese nodo");
+                    }
+                }
+                if (opcionEquipo == 4) {
+                    for (Equipo temp : listaEquipos) {
+                        System.out.print(temp.toString());
+                    }
+                }
+            }
+            if (opcionMenu == 2) {
+                System.out.print("Ingrese la posicion del equipo: ");
+                int posicionEquipo = sc.nextInt();
+                if (posicionEquipo >= 0 && posicionEquipo < listaEquipos.size()) {
+                    int opcionJugador = 0;
+                    while (opcionJugador != 5) {
 
+                        System.out.println("1)Crear Jugador\n"
+                                + "2)Modificar Jugador\n"
+                                + "3)Eliminar Jugador\n"
+                                + "4)Listar Jugador\n"
+                                + "5)Atras");
+                        System.out.print("Ingrese su opcion: ");
+                        opcionJugador = sc.nextInt();
+
+                        if (opcionJugador == 1) {
+                            System.out.print("Ingrese el nombre del Jugador: ");
+                            String nombreJugador = sc.next();
+                            System.out.print("Ingrese el apodo del Jugador: ");
+                            String apodo = sc.next();
+                            System.out.print("Ingrese el numero de camiseta del Jugador: ");
+                            int numeroCamiseta = sc.nextInt();
+                            System.out.print("Ingrese el equipo de Futbol favorito del Jugador: ");
+                            String equipoFutfav = sc.next();
+                            System.out.print("Ingrese el equipo de Basketball favorito del Jugador: ");
+                            String equipoBasfav = sc.next();
+                            System.out.print("Ingrese el jugador Favorito del Jugador: ");
+                            String jugadorFav = sc.next();
+                            System.out.print("Ingrese la edad del Jugador: ");
+                            int edad = sc.nextInt();
+                            System.out.print("Ingrese el anio de nacimiento del Jugador: ");
+                            String anoNacimiento = sc.next();
+                            System.out.print("Ingrese el numero de Estrellas del Jugador(1-5): ");
+                            int numeroEstrellas = sc.nextInt();
+                            while (numeroEstrellas < 1 || numeroEstrellas > 5) {
+                                System.out.println("Debe ser entre 1 y 5");
+                                System.out.print("Ingrese el numero de Estrellas del Jugador(1-5): ");
+                                numeroEstrellas = sc.nextInt();
+                            }
+                            listaEquipos.get(posicionEquipo).getListaJugadores().add(new Jugador(nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                        }
+                        if (opcionJugador == 2) {
+                            System.out.println("1)Nombre del Jugador\n"
+                                    + "2)Apodo\n"
+                                    + "3)Numero de Camiseta\n"
+                                    + "4)Equipo de Futbol favorito\n"
+                                    + "5)Equipo de Basketball favorito\n"
+                                    + "6)Jugador Favorito\n"
+                                    + "7)Edad\n"
+                                    + "8)Anio de Nacimiento\n"
+                                    + "9)Numero de Estrellas\n"
+                                    + "10)Atras");
+                            System.out.print("Ingrese su opcion: ");
+                            int opcionModificar = sc.nextInt();
+                        }
+                    }
+                } else {
+                    System.out.println("No existe ese nodo");
+                }
             }
         }
     }
