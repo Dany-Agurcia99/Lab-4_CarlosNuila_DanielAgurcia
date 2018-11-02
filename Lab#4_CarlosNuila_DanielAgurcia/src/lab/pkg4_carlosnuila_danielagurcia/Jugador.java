@@ -126,7 +126,7 @@ public class Jugador {
     public void Menu() {
         int opcionMenu = 0;
         ArrayList<Equipo> listaEquipos = new ArrayList();
-        while (opcionMenu != 5) {
+        while (opcionMenu != 4) {
             System.out.println("1)Administrar Equipo\n"
                     + "2)Administrar Jugadores\n"
                     + "3)Jugar\n"
@@ -391,27 +391,33 @@ public class Jugador {
                                     listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setApodo(apodo);
                                 }
                                 if (opcionModificar == 3) {
-                                    System.out.print("Ingrese el numeroCamiseta del Jugador: ");
+                                    System.out.print("Ingrese el numero de la camiseta del Jugador: ");
                                     int numeroCamiseta = sc.nextInt();
                                     listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setNumeroCamiseta(numeroCamiseta);
                                 }
                                 if (opcionModificar == 4) {
-                                    System.out.print("Ingrese el equipoFutfav del Jugador: ");
+                                    System.out.print("Ingrese el equipo de Futbol favorito del Jugador: ");
                                     String equipoFutfav = sc.next();
                                     listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setEquipoFutFav(equipoFutfav);
                                 }
                                 if (opcionModificar == 5) {
-                                    System.out.print("Ingrese el equipoBasfav del Jugador: ");
+                                    System.out.print("Ingrese el equipo de Basketball favorito del Jugador: ");
                                     String equipoBasfav = sc.next();
                                     listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setEquipoBasFav(equipoBasfav);
                                 }
                                 if (opcionModificar == 6) {
-                                    System.out.print("Ingrese el jugadorFav del Jugador: ");
+                                    System.out.print("Ingrese el jugador favorito del Jugador: ");
                                     String jugadorFav = sc.next();
                                     listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setJugadorFav(jugadorFav);
                                 }
-                                if (opcionModificar == 7){
-                                    
+                                if (opcionModificar == 7) {
+                                    System.out.print("Ingrese el edad del Jugador: ");
+                                    int edad = sc.nextInt();
+                                    listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setEdad(edad);
+                                }
+                                if (opcionModificar == 8) {
+                                    System.out.print("Ingrese el anoNacimiento del Jugador: ");
+                                    String anoNacimiento = sc.next();
                                 }
                             } else {
                                 System.out.println("No existe ese nodo");
@@ -421,6 +427,9 @@ public class Jugador {
                 } else {
                     System.out.println("No existe ese nodo");
                 }
+            }
+            if (opcionMenu == 3){
+                
             }
         }
     }
