@@ -250,12 +250,11 @@ public class Jugador {
                 int posicionEquipo = sc.nextInt();
                 if (posicionEquipo >= 0 && posicionEquipo < listaEquipos.size()) {
                     int opcionJugador = 0;
-                    while (opcionJugador != 5) {
+                    while (opcionJugador != 4) {
                         System.out.println("1)Crear Jugador\n"
                                 + "2)Modificar Jugador\n"
                                 + "3)Eliminar Jugador\n"
-                                + "4)Listar Jugador\n"
-                                + "5)Atras");
+                                + "4)Atras");
                         System.out.print("Ingrese su opcion: ");
                         opcionJugador = sc.nextInt();
 
@@ -504,6 +503,29 @@ public class Jugador {
                                         System.out.println("No es un tirador");
                                     }
                                 }
+                                if (opcionModificar == 15) {
+                                    if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Tirador) {
+                                        System.out.print("Ingrese el manejo del Balon del Jugador: ");
+                                        int manejoBalon = sc.nextInt();
+                                        while (manejoBalon < 1 || manejoBalon > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la fuerza del pateador(1-100): ");
+                                            manejoBalon = sc.nextInt();
+                                        }
+                                        ((Tirador) listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador)).setManejoBalon(manejoBalon);
+                                    } else {
+                                        System.out.println("No es un tirador");
+                                    }
+                                }
+                            } else {
+                                System.out.println("No existe ese nodo");
+                            }
+                        }
+                        if (opcionJugador == 3) {
+                            System.out.print("Ingrese la posicion del jugador: ");
+                            int posicionJugador = sc.nextInt();
+                            if (posicionJugador >= 0 && posicionJugador < listaEquipos.get(posicionEquipo).ListaJugadores.size()) {
+                                listaEquipos.get(posicionEquipo).ListaJugadores.remove(posicionJugador);
                             } else {
                                 System.out.println("No existe ese nodo");
                             }
