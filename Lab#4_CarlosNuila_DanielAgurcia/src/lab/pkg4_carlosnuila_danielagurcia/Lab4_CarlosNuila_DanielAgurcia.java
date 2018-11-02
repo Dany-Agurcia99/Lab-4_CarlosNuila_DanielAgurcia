@@ -1,11 +1,13 @@
 package lab.pkg4_carlosnuila_danielagurcia;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Lab4_CarlosNuila_DanielAgurcia {
 
     public static Scanner sc = new Scanner(System.in);
+    public static Random r = new Random();
 
     public static void main(String[] args) {
         ArrayList<Equipo> Listaequipos = new ArrayList();
@@ -59,12 +61,63 @@ public class Lab4_CarlosNuila_DanielAgurcia {
                         System.out.println("Seleccione la posicion del jugador a quien le quiere dar pase: ");
                         int posicionPase = sc.nextInt();
                         JugadorConBalon = EquipoActual.getListaJugadores().get(posicionPase);
+                        contPases++;
                         break;
                     case 2:
                         contPases = 6;
                         break;
                 }
             }
+            int num = 1 + r.nextInt(100);
+            if (JugadorConBalon instanceof Pateador) {
+                if (num < JugadorConBalon.Atacar()) {
+                    System.out.println(JugadorConBalon.getApodo() + " ANOTOO!!!");
+                    if (EquipoActual == EquipoJ1) {
+                        golesJ1++;
+                    } else {
+                        golesJ2++;
+                    }
+                } else {
+                    System.out.println(JugadorConBalon.getApodo() + "SE LA HA FALLADOOO!!");
+                }
+            } else if (JugadorConBalon instanceof Tirador) {
+                System.out.println("Ingrese 2 si tira de 2 puntos\nIngrese 3 si tira de 3 puntos");
+                int opcionTiro = sc.nextInt();
+                switch (opcionTiro) {
+                    case 2:
+                        if (num < JugadorConBalon.Atacar()) {
+                            System.out.println(JugadorConBalon.getApodo() + " ANOTOO!!!");
+                            if (EquipoActual == EquipoJ1) {
+                                golesJ1++;
+                            } else {
+                                golesJ2++;
+                            }
+                        } else {
+                            System.out.println(JugadorConBalon.getApodo() + "SE LA HA FALLADOOO!!");
+                        }
+                        break;
+                    case 3:
+                        if (num < JugadorConBalon.Atacar()) {
+                            System.out.println(JugadorConBalon.getApodo() + " ANOTOO!!!");
+                            if (EquipoActual == EquipoJ1) {
+                                golesJ1++;
+                            } else {
+                                golesJ2++;
+                            }
+                        } else {
+                            System.out.println(JugadorConBalon.getApodo() + "SE LA HA FALLADOOO!!");
+                        }
+                        break;
+                }
+            }
+            if (golesJ1 == 11 || golesJ2 == 11) {
+                EstadoJuego = false;
+            }
+        }
+        if (golesJ1 == 11) {
+            System.out.println("Felicidades " + NombreJ1 + " Ganaste la partida de Futloncesto");
+        } else if (golesJ2 == 11) {
+            System.out.println("Felicidades " + NombreJ2 + " Ganaste la partida de Futloncesto");
         }
     }
 }
