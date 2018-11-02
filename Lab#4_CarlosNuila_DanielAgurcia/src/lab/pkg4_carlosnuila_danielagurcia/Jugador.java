@@ -104,4 +104,8 @@ public class Jugador {
         return "Jugador{" + "nombre=" + nombre + ", apodo=" + apodo + ", numeroCamiseta=" + numeroCamiseta + ", equipoFutFav=" + equipoFutFav + ", equipoBasFav=" + equipoBasFav + ", jugadorFav=" + jugadorFav + ", edad=" + edad + ", anoNacimiento=" + anoNacimiento + ", numeroEstrellas=" + numeroEstrellas + '}';
     }
 
+    public double Atacar() {
+        return 0;
+    }
+
 }
