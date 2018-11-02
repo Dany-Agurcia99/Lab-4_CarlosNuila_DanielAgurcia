@@ -58,10 +58,27 @@ public class Lab4_CarlosNuila_DanielAgurcia {
                 int opcion1 = sc.nextInt();
                 switch (opcion1) {
                     case 1:
-                        System.out.println("Seleccione la posicion del jugador a quien le quiere dar pase: ");
-                        int posicionPase = sc.nextInt();
-                        JugadorConBalon = EquipoActual.getListaJugadores().get(posicionPase);
-                        contPases++;
+                        if (JugadorConBalon instanceof Tirador) {
+                            System.out.println("Seleccione la posicion del jugador a quien le quiere dar pase: ");
+                            int posicionPase = sc.nextInt();
+                            while (EquipoActual.getListaJugadores().get(posicionPase) instanceof Tirador) {
+                                System.out.println("El Tirador no puede darle pases a otro Tirador, tiene que darle pase a un Pateador");
+                                System.out.println("Seleccione la posicion del jugador a quien le quiere dar pase: ");
+                                posicionPase = sc.nextInt();
+                            }
+                            JugadorConBalon = EquipoActual.getListaJugadores().get(posicionPase);
+                            contPases++;
+                        } else if (JugadorConBalon instanceof Pateador) {
+                            System.out.println("Seleccione la posicion del jugador a quien le quiere dar pase: ");
+                            int posicionPase = sc.nextInt();
+                            while (EquipoActual.getListaJugadores().get(posicionPase) instanceof Pateador) {
+                                System.out.println("El Pateador no puede darle pases a otro Pateador, tiene que darle pase a un Tirador");
+                                System.out.println("Seleccione la posicion del jugador a quien le quiere dar pase: ");
+                                posicionPase = sc.nextInt();
+                            }
+                            JugadorConBalon = EquipoActual.getListaJugadores().get(posicionPase);
+                            contPases++;
+                        }
                         break;
                     case 2:
                         contPases = 6;
@@ -71,14 +88,14 @@ public class Lab4_CarlosNuila_DanielAgurcia {
             int num = 1 + r.nextInt(100);
             if (JugadorConBalon instanceof Pateador) {
                 if (num < JugadorConBalon.Atacar(0)) {
-                    System.out.println(JugadorConBalon.getApodo() + " ANOTOO!!!");
+                    System.out.println(JugadorConBalon.getApodo() + " ANOTOO A LA PORTERIA!!!");
                     if (EquipoActual == EquipoJ1) {
                         golesJ1++;
                     } else {
                         golesJ2++;
                     }
                 } else {
-                    System.out.println(JugadorConBalon.getApodo() + "SE LA HA FALLADOOO!!");
+                    System.out.println(JugadorConBalon.getApodo() + "SE LA HA FALLADOOO A LA PORTERIA!!");
                 }
             } else if (JugadorConBalon instanceof Tirador) {
                 System.out.println("Ingrese 2 si tira de 2 puntos\nIngrese 3 si tira de 3 puntos");
@@ -86,26 +103,26 @@ public class Lab4_CarlosNuila_DanielAgurcia {
                 switch (opcionTiro) {
                     case 2:
                         if (num < JugadorConBalon.Atacar(2)) {
-                            System.out.println(JugadorConBalon.getApodo() + " ANOTOO!!!");
+                            System.out.println(JugadorConBalon.getApodo() + " ANOTOO AL AROOO!!!");
                             if (EquipoActual == EquipoJ1) {
                                 golesJ1++;
                             } else {
                                 golesJ2++;
                             }
                         } else {
-                            System.out.println(JugadorConBalon.getApodo() + "SE LA HA FALLADOOO!!");
+                            System.out.println(JugadorConBalon.getApodo() + "LA TIRO AL ARO Y SE LA HA FALLADO SE LA HA FALLADOOO!!");
                         }
                         break;
                     case 3:
                         if (num < JugadorConBalon.Atacar(3)) {
-                            System.out.println(JugadorConBalon.getApodo() + " ANOTOO!!!");
+                            System.out.println(JugadorConBalon.getApodo() + " ANOTOO AL AROOO!!!");
                             if (EquipoActual == EquipoJ1) {
                                 golesJ1++;
                             } else {
                                 golesJ2++;
                             }
                         } else {
-                            System.out.println(JugadorConBalon.getApodo() + "SE LA HA FALLADOOO!!");
+                            System.out.println(JugadorConBalon.getApodo() + "LA TIRO AL ARO Y SE LA HA FALLADOOO!!");
                         }
                         break;
                 }
