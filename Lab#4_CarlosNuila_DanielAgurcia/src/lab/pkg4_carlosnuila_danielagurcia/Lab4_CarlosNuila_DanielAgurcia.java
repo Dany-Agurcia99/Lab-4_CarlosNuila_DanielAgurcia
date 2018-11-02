@@ -70,7 +70,7 @@ public class Lab4_CarlosNuila_DanielAgurcia {
             }
             int num = 1 + r.nextInt(100);
             if (JugadorConBalon instanceof Pateador) {
-                if (num < JugadorConBalon.Atacar()) {
+                if (num < JugadorConBalon.Atacar(0)) {
                     System.out.println(JugadorConBalon.getApodo() + " ANOTOO!!!");
                     if (EquipoActual == EquipoJ1) {
                         golesJ1++;
@@ -97,7 +97,7 @@ public class Lab4_CarlosNuila_DanielAgurcia {
                         }
                         break;
                     case 3:
-                        if (num < JugadorConBalon.Atacar()) {
+                        if (num < JugadorConBalon.Atacar(3)) {
                             System.out.println(JugadorConBalon.getApodo() + " ANOTOO!!!");
                             if (EquipoActual == EquipoJ1) {
                                 golesJ1++;
