@@ -7,6 +7,7 @@ public class Tirador extends Jugador {
     int manejoBalon;
 
     public Tirador() {
+        super();
     }
 
     public Tirador(int tiro3, int tiro2, int manejoBalon) {
@@ -53,9 +54,9 @@ public class Tirador extends Jugador {
 
     public double Atacar(int tipoTiro) {
         if (tipoTiro == 2) {
-            return (tiro3 + manejoBalon) * 0.90 * numeroEstrellas / 10;
+            return (tiro3 + manejoBalon) * 0.90 * (numeroEstrellas / 10);
         } else {
-            return (tiro2 + manejoBalon) * 0.95 * numeroEstrellas / 10;
+            return (tiro2 + manejoBalon) * 0.95 * (numeroEstrellas / 10);
         }
     }
 

@@ -46,4 +46,7 @@ public class Pateador extends Jugador {
         return "Pateador{" + "habilidadPateador=" + habilidadPateador + ", fuerza=" + fuerza + ", habilidadRegateadora=" + habilidadRegateadora + '}';
     }
 
+    public double Atacar() {
+        return (habilidadPateador + fuerza + habilidadRegateadora) * 0.65 * (numeroEstrellas / 10);
+    }
 }
