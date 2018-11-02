@@ -318,8 +318,33 @@ public class Jugador {
                                 } else {
                                     System.out.println("Ya tiene la cantidad maxima de Pateadores");
                                 }
-                                if (tipoJugador == 2){
-                                    
+                                if (tipoJugador == 2) {
+                                    if (contTiradores <= 2) {
+                                        System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
+                                        int tiro3 = sc.nextInt();
+                                        while (tiro3 < 1 || tiro3 > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
+                                            tiro3 = sc.nextInt();
+                                        }
+                                        System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
+                                        int tiro2 = sc.nextInt();
+                                        while (tiro2 < 1 || tiro2 > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
+                                            tiro2 = sc.nextInt();
+                                        }
+                                        System.out.print("Ingrese la habilidad regateadora del pateador(1-100): ");
+                                        int habilidadRegateadora = sc.nextInt();
+                                        while (habilidadRegateadora < 1 || habilidadRegateadora > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la habilidad del pateador(1-100): ");
+                                            habilidadRegateadora = sc.nextInt();
+                                        }
+                                        listaEquipos.get(posicionEquipo).getListaJugadores().add(new Pateador(hablidadPateador, fuerza, habilidadRegateadora, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                                    } else {
+                                        System.out.println("Ya tiene la cantidad maxima de Pateadores");
+                                    }
                                 }
 
                             }
