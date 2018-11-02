@@ -269,12 +269,60 @@ public class Jugador {
                             String anoNacimiento = sc.next();
                             System.out.print("Ingrese el numero de Estrellas del Jugador(1-5): ");
                             int numeroEstrellas = sc.nextInt();
+                            int contPateadores = 0;
+                            int contTiradores = 0;
                             while (numeroEstrellas < 1 || numeroEstrellas > 5) {
                                 System.out.println("Debe ser entre 1 y 5");
                                 System.out.print("Ingrese el numero de Estrellas del Jugador(1-5): ");
                                 numeroEstrellas = sc.nextInt();
                             }
-                            listaEquipos.get(posicionEquipo).getListaJugadores().add(new Jugador(nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                            for (int i = 0; i < listaEquipos.get(posicionEquipo).ListaJugadores.size(); i++) {
+                                if (listaEquipos.get(posicionEquipo).ListaJugadores.get(i) instanceof Pateador) {
+                                    contPateadores++;
+                                } else {
+                                    contTiradores++;
+                                }
+                            }
+                            System.out.println("1)Pateador\n"
+                                    + "2)Tirador");
+                            System.out.print("Ingrese el tipo de jugador: ");
+                            int tipoJugador = sc.nextInt();
+                            while (tipoJugador < 1 || tipoJugador > 2) {
+                                System.out.print("Ingrese el tipo de jugador: ");
+                                tipoJugador = sc.nextInt();
+                            }
+                            if (tipoJugador == 1) {
+                                if (contPateadores <= 3) {
+                                    System.out.print("Ingrese la habilidad pateadora del pateador(1-100): ");
+                                    int hablidadPateador = sc.nextInt();
+                                    while (hablidadPateador < 1 || hablidadPateador > 100) {
+                                        System.out.println("Entre 1 y 100");
+                                        System.out.print("Ingrese la habilidad pateadora del pateador(1-100): ");
+                                        hablidadPateador = sc.nextInt();
+                                    }
+                                    System.out.print("Ingrese la fuerza del pateador(1-100): ");
+                                    int fuerza = sc.nextInt();
+                                    while (fuerza < 1 || fuerza > 100) {
+                                        System.out.println("Entre 1 y 100");
+                                        System.out.print("Ingrese la habilidad del pateador(1-100): ");
+                                        fuerza = sc.nextInt();
+                                    }
+                                    System.out.print("Ingrese la habilidad regateadora del pateador(1-100): ");
+                                    int habilidadRegateadora = sc.nextInt();
+                                    while (habilidadRegateadora < 1 || habilidadRegateadora > 100) {
+                                        System.out.println("Entre 1 y 100");
+                                        System.out.print("Ingrese la habilidad del pateador(1-100): ");
+                                        habilidadRegateadora = sc.nextInt();
+                                    }
+                                    listaEquipos.get(posicionEquipo).getListaJugadores().add(new Pateador(hablidadPateador, fuerza, habilidadRegateadora, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                                } else {
+                                    System.out.println("Ya tiene la cantidad maxima de Pateadores");
+                                }
+                                if (tipoJugador == 2){
+                                    
+                                }
+
+                            }
                         }
                         if (opcionJugador == 2) {
                             System.out.println("1)Nombre del Jugador\n"
