@@ -324,39 +324,37 @@ public class Jugador {
                                             habilidadRegateadora = sc.nextInt();
                                         }
                                         listaEquipos.get(posicionEquipo).getListaJugadores().add(new Pateador(hablidadPateador, fuerza, habilidadRegateadora, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
-                                    } else {
-                                        System.out.println("Ya tiene la cantidad maxima de Pateadores");
                                     }
-
-                                    if (tipoJugador == 2) {
-                                        if (contTiradores <= 2) {
+                                } else {
+                                    System.out.println("Ya tiene la cantidad maxima de Pateadores");
+                                }
+                                if (tipoJugador == 2) {
+                                    if (contTiradores <= 2) {
+                                        System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
+                                        int tiro3 = sc.nextInt();
+                                        while (tiro3 < 1 || tiro3 > 100) {
+                                            System.out.println("Entre 1 y 100");
                                             System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
-                                            int tiro3 = sc.nextInt();
-                                            while (tiro3 < 1 || tiro3 > 100) {
-                                                System.out.println("Entre 1 y 100");
-                                                System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
-                                                tiro3 = sc.nextInt();
-                                            }
-                                            System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
-                                            int tiro2 = sc.nextInt();
-                                            while (tiro2 < 1 || tiro2 > 100) {
-                                                System.out.println("Entre 1 y 100");
-                                                System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
-                                                tiro2 = sc.nextInt();
-                                            }
-                                            System.out.print("Ingrese el manejo del balon del tirador(1-100): ");
-                                            int manejoBalon = sc.nextInt();
-                                            while (manejoBalon < 1 || manejoBalon > 100) {
-                                                System.out.println("Entre 1 y 100");
-                                                System.out.print("Ingrese el manejo de balon del tirador(1-100): ");
-                                                manejoBalon = sc.nextInt();
-                                            }
-                                            listaEquipos.get(posicionEquipo).getListaJugadores().add(new Tirador(tiro3, tiro2, manejoBalon, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
-                                        } else {
-                                            System.out.println("Ya tiene la cantidad maxima de Tiradores");
+                                            tiro3 = sc.nextInt();
                                         }
+                                        System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
+                                        int tiro2 = sc.nextInt();
+                                        while (tiro2 < 1 || tiro2 > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
+                                            tiro2 = sc.nextInt();
+                                        }
+                                        System.out.print("Ingrese el manejo del balon del tirador(1-100): ");
+                                        int manejoBalon = sc.nextInt();
+                                        while (manejoBalon < 1 || manejoBalon > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese el manejo de balon del tirador(1-100): ");
+                                            manejoBalon = sc.nextInt();
+                                        }
+                                        listaEquipos.get(posicionEquipo).getListaJugadores().add(new Tirador(tiro3, tiro2, manejoBalon, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                                    } else {
+                                        System.out.println("Ya tiene la cantidad maxima de Tiradores");
                                     }
-
                                 }
                             } else {
                                 System.out.println("Ya tiene 5 jugadores");
