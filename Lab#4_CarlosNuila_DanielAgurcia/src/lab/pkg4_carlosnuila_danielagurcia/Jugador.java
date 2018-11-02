@@ -360,23 +360,62 @@ public class Jugador {
                             }
                         }
                         if (opcionJugador == 2) {
-                            System.out.println("1)Nombre del Jugador\n"
-                                    + "2)Apodo\n"
-                                    + "3)Numero de Camiseta\n"
-                                    + "4)Equipo de Futbol favorito\n"
-                                    + "5)Equipo de Basketball favorito\n"
-                                    + "6)Jugador Favorito\n"
-                                    + "7)Edad\n"
-                                    + "8)Anio de Nacimiento\n"
-                                    + "9)Numero de Estrellas\n"
-                                    + "10)Habilidad Pateadora\n"
-                                    + "11)Hablididad Regateadora\n"
-                                    + "12)Fuerza\n"
-                                    + "13)Tiro 3\n"
-                                    + "14)Tiro 2\n"
-                                    + "15)Manejo de Balon");
-                            System.out.print("Ingrese su opcion: ");
-                            int opcionModificar = sc.nextInt();
+                            System.out.print("Ingrese la posicion del jugador: ");
+                            int posicionJugador = sc.nextInt();
+                            if (posicionJugador >= 0 && posicionJugador < listaEquipos.get(posicionEquipo).ListaJugadores.size()) {
+                                System.out.println("1)Nombre del Jugador\n"
+                                        + "2)Apodo\n"
+                                        + "3)Numero de Camiseta\n"
+                                        + "4)Equipo de Futbol favorito\n"
+                                        + "5)Equipo de Basketball favorito\n"
+                                        + "6)Jugador Favorito\n"
+                                        + "7)Edad\n"
+                                        + "8)Anio de Nacimiento\n"
+                                        + "9)Numero de Estrellas\n"
+                                        + "10)Habilidad Pateadora\n"
+                                        + "11)Hablididad Regateadora\n"
+                                        + "12)Fuerza\n"
+                                        + "13)Tiro 3\n"
+                                        + "14)Tiro 2\n"
+                                        + "15)Manejo de Balon");
+                                System.out.print("Ingrese su opcion: ");
+                                int opcionModificar = sc.nextInt();
+                                if (opcionModificar == 1) {
+                                    System.out.print("Ingrese el nombre del Jugador: ");
+                                    String nombreJugador = sc.next();
+                                    listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setNombre(nombreJugador);
+                                }
+                                if (opcionModificar == 2) {
+                                    System.out.print("Ingrese el apodo del Jugador: ");
+                                    String apodo = sc.next();
+                                    listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setApodo(apodo);
+                                }
+                                if (opcionModificar == 3) {
+                                    System.out.print("Ingrese el numeroCamiseta del Jugador: ");
+                                    int numeroCamiseta = sc.nextInt();
+                                    listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setNumeroCamiseta(numeroCamiseta);
+                                }
+                                if (opcionModificar == 4) {
+                                    System.out.print("Ingrese el equipoFutfav del Jugador: ");
+                                    String equipoFutfav = sc.next();
+                                    listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setEquipoFutFav(equipoFutfav);
+                                }
+                                if (opcionModificar == 5) {
+                                    System.out.print("Ingrese el equipoBasfav del Jugador: ");
+                                    String equipoBasfav = sc.next();
+                                    listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setEquipoBasFav(equipoBasfav);
+                                }
+                                if (opcionModificar == 6) {
+                                    System.out.print("Ingrese el jugadorFav del Jugador: ");
+                                    String jugadorFav = sc.next();
+                                    listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setJugadorFav(jugadorFav);
+                                }
+                                if (opcionModificar == 7){
+                                    
+                                }
+                            } else {
+                                System.out.println("No existe ese nodo");
+                            }
                         }
                     }
                 } else {
