@@ -11,7 +11,7 @@ public class Pateador extends Jugador {
     }
 
     public Pateador(int habilidadPateador, int fuerza, int habilidadRegateadora, String nombre, String apodo, int numeroCamiseta, String equipoFutFav, String equipoBasFav, String jugadorFav, int edad, String anoNacimiento, int numeroEstrellas) {
-        super(nombre, apodo, numeroCamiseta, equipoFutFav, equipoBasFav, jugadorFav, edad, anoNacimiento, numeroEstrellas);
+        super(nombre, apodo, numeroCamiseta, equipoFutFav, equipoBasFav, jugadorFav, edad, anoNacimiento, numeroEstrellas,0);
         this.habilidadPateador = habilidadPateador;
         this.fuerza = fuerza;
         this.habilidadRegateadora = habilidadRegateadora;
