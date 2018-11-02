@@ -250,18 +250,16 @@ public class Jugador {
                 int posicionEquipo = sc.nextInt();
                 if (posicionEquipo >= 0 && posicionEquipo < listaEquipos.size()) {
                     int opcionJugador = 0;
-                    while (opcionJugador != 5) {
-
+                    while (opcionJugador != 4) {
                         System.out.println("1)Crear Jugador\n"
                                 + "2)Modificar Jugador\n"
                                 + "3)Eliminar Jugador\n"
-                                + "4)Listar Jugador\n"
-                                + "5)Atras");
+                                + "4)Atras");
                         System.out.print("Ingrese su opcion: ");
                         opcionJugador = sc.nextInt();
 
                         if (opcionJugador == 1) {
-                            if (listaEquipos.get(posicionEquipo).ListaJugadores.size() == 5) {
+                            if (listaEquipos.get(posicionEquipo).ListaJugadores.size() <= 5) {
                                 System.out.print("Ingrese el nombre del Jugador: ");
                                 String nombreJugador = sc.next();
                                 System.out.print("Ingrese el apodo del Jugador: ");
@@ -326,40 +324,40 @@ public class Jugador {
                                             habilidadRegateadora = sc.nextInt();
                                         }
                                         listaEquipos.get(posicionEquipo).getListaJugadores().add(new Pateador(hablidadPateador, fuerza, habilidadRegateadora, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
-                                    } else {
-                                        System.out.println("Ya tiene la cantidad maxima de Pateadores");
                                     }
-
-                                    if (tipoJugador == 2) {
-                                        if (contTiradores <= 2) {
-                                            System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
-                                            int tiro3 = sc.nextInt();
-                                            while (tiro3 < 1 || tiro3 > 100) {
-                                                System.out.println("Entre 1 y 100");
-                                                System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
-                                                tiro3 = sc.nextInt();
-                                            }
-                                            System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
-                                            int tiro2 = sc.nextInt();
-                                            while (tiro2 < 1 || tiro2 > 100) {
-                                                System.out.println("Entre 1 y 100");
-                                                System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
-                                                tiro2 = sc.nextInt();
-                                            }
-                                            System.out.print("Ingrese el manejo del balon del tirador(1-100): ");
-                                            int manejoBalon = sc.nextInt();
-                                            while (manejoBalon < 1 || manejoBalon > 100) {
-                                                System.out.println("Entre 1 y 100");
-                                                System.out.print("Ingrese el manejo de balon del tirador(1-100): ");
-                                                manejoBalon = sc.nextInt();
-                                            }
-                                            listaEquipos.get(posicionEquipo).getListaJugadores().add(new Tirador(tiro3, tiro2, manejoBalon, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
-                                        } else {
-                                            System.out.println("Ya tiene la cantidad maxima de Tiradores");
-                                        }
-                                    }
-
+                                } else {
+                                    System.out.println("Ya tiene la cantidad maxima de Pateadores");
                                 }
+                                if (tipoJugador == 2) {
+                                    if (contTiradores <= 2) {
+                                        System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
+                                        int tiro3 = sc.nextInt();
+                                        while (tiro3 < 1 || tiro3 > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
+                                            tiro3 = sc.nextInt();
+                                        }
+                                        System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
+                                        int tiro2 = sc.nextInt();
+                                        while (tiro2 < 1 || tiro2 > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
+                                            tiro2 = sc.nextInt();
+                                        }
+                                        System.out.print("Ingrese el manejo del balon del tirador(1-100): ");
+                                        int manejoBalon = sc.nextInt();
+                                        while (manejoBalon < 1 || manejoBalon > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese el manejo de balon del tirador(1-100): ");
+                                            manejoBalon = sc.nextInt();
+                                        }
+                                        listaEquipos.get(posicionEquipo).getListaJugadores().add(new Tirador(tiro3, tiro2, manejoBalon, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                                    } else {
+                                        System.out.println("Ya tiene la cantidad maxima de Tiradores");
+                                    }
+                                }
+                            } else {
+                                System.out.println("Ya tiene 5 jugadores");
                             }
                         }
                         if (opcionJugador == 2) {
@@ -477,6 +475,20 @@ public class Jugador {
                                 }
                                 if (opcionModificar == 13) {
                                     if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Tirador) {
+                                        System.out.print("Ingrese el tiro de 3 del Jugador: ");
+                                        int tiro3 = sc.nextInt();
+                                        while (tiro3 < 1 || tiro3 > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese el tiro de 3 del tirador(1-100): ");
+                                            tiro3 = sc.nextInt();
+                                        }
+                                        ((Tirador) listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador)).setTiro3(tiro3);
+                                    } else {
+                                        System.out.println("No es un tirador");
+                                    }
+                                }
+                                if (opcionModificar == 14) {
+                                    if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Tirador) {
                                         System.out.print("Ingrese el tiro2 del Jugador: ");
                                         int tiro2 = sc.nextInt();
                                         while (tiro2 < 1 || tiro2 > 100) {
@@ -489,9 +501,29 @@ public class Jugador {
                                         System.out.println("No es un tirador");
                                     }
                                 }
-                                if (opcionModificar == 14){
-                                    
+                                if (opcionModificar == 15) {
+                                    if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Tirador) {
+                                        System.out.print("Ingrese el manejo del Balon del Jugador: ");
+                                        int manejoBalon = sc.nextInt();
+                                        while (manejoBalon < 1 || manejoBalon > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la fuerza del pateador(1-100): ");
+                                            manejoBalon = sc.nextInt();
+                                        }
+                                        ((Tirador) listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador)).setManejoBalon(manejoBalon);
+                                    } else {
+                                        System.out.println("No es un tirador");
+                                    }
                                 }
+                            } else {
+                                System.out.println("No existe ese nodo");
+                            }
+                        }
+                        if (opcionJugador == 3) {
+                            System.out.print("Ingrese la posicion del jugador: ");
+                            int posicionJugador = sc.nextInt();
+                            if (posicionJugador >= 0 && posicionJugador < listaEquipos.get(posicionEquipo).ListaJugadores.size()) {
+                                listaEquipos.get(posicionEquipo).ListaJugadores.remove(posicionJugador);
                             } else {
                                 System.out.println("No existe ese nodo");
                             }
