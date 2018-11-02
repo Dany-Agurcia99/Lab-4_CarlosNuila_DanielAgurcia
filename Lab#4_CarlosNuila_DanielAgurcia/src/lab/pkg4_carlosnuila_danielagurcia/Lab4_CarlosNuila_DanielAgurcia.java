@@ -14,17 +14,28 @@ public class Lab4_CarlosNuila_DanielAgurcia {
     }
 
     public static void Jugar(Equipo EquipoJ1, Equipo EquipoJ2, String NombreJ1, String NombreJ2) {
-        int goles = 0;
-
-        Equipo EquipoActual = null;
+        int contPosJ1 = 0;
+        int contPosJ2 = 0;
+        int golesJ1 = 0;
+        int golesJ2 = 0;
         boolean Turno = true;
         boolean EstadoJuego = true;
         while (EstadoJuego == true) {
+            int contpos = 0;
+            int goles = 0;
+            Equipo EquipoActual = null;
             if (Turno == true) {
+                contpos = contPosJ1;
+                goles = golesJ1;
+                EquipoActual = EquipoJ1;
                 Turno = false;
             } else {
+                contpos = contPosJ2;
+                goles = golesJ2;
+                EquipoActual = EquipoJ2;
                 Turno = true;
             }
+
         }
     }
 }
