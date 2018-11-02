@@ -334,16 +334,16 @@ public class Jugador {
                                             System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
                                             tiro2 = sc.nextInt();
                                         }
-                                        System.out.print("Ingrese la habilidad regateadora del pateador(1-100): ");
-                                        int habilidadRegateadora = sc.nextInt();
-                                        while (habilidadRegateadora < 1 || habilidadRegateadora > 100) {
+                                        System.out.print("Ingrese el manejo del balon del tirador(1-100): ");
+                                        int manejoBalon = sc.nextInt();
+                                        while (manejoBalon < 1 || manejoBalon > 100) {
                                             System.out.println("Entre 1 y 100");
                                             System.out.print("Ingrese la habilidad del pateador(1-100): ");
-                                            habilidadRegateadora = sc.nextInt();
+                                            manejoBalon = sc.nextInt();
                                         }
-                                        listaEquipos.get(posicionEquipo).getListaJugadores().add(new Pateador(hablidadPateador, fuerza, habilidadRegateadora, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                                        listaEquipos.get(posicionEquipo).getListaJugadores().add(new Tirador(tiro3, tiro2, manejoBalon, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
                                     } else {
-                                        System.out.println("Ya tiene la cantidad maxima de Pateadores");
+                                        System.out.println("Ya tiene la cantidad maxima de Tiradores");
                                     }
                                 }
 
