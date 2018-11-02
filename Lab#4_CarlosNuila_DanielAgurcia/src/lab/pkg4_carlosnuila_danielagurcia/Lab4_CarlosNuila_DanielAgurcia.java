@@ -24,18 +24,27 @@ public class Lab4_CarlosNuila_DanielAgurcia {
             int contpos = 0;
             int goles = 0;
             Equipo EquipoActual = null;
+            String NombreJugador = "";
             if (Turno == true) {
                 contpos = contPosJ1;
                 goles = golesJ1;
                 EquipoActual = EquipoJ1;
+                NombreJugador = NombreJ1;
                 Turno = false;
             } else {
                 contpos = contPosJ2;
                 goles = golesJ2;
                 EquipoActual = EquipoJ2;
+                NombreJugador = NombreJ2;
                 Turno = true;
             }
-
+            
+            
+            
+            
+            
+            
+            
         }
     }
 }
