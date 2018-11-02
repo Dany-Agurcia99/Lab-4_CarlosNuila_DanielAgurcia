@@ -261,102 +261,105 @@ public class Jugador {
                         opcionJugador = sc.nextInt();
 
                         if (opcionJugador == 1) {
-                            System.out.print("Ingrese el nombre del Jugador: ");
-                            String nombreJugador = sc.next();
-                            System.out.print("Ingrese el apodo del Jugador: ");
-                            String apodo = sc.next();
-                            System.out.print("Ingrese el numero de camiseta del Jugador: ");
-                            int numeroCamiseta = sc.nextInt();
-                            System.out.print("Ingrese el equipo de Futbol favorito del Jugador: ");
-                            String equipoFutfav = sc.next();
-                            System.out.print("Ingrese el equipo de Basketball favorito del Jugador: ");
-                            String equipoBasfav = sc.next();
-                            System.out.print("Ingrese el jugador Favorito del Jugador: ");
-                            String jugadorFav = sc.next();
-                            System.out.print("Ingrese la edad del Jugador: ");
-                            int edad = sc.nextInt();
-                            System.out.print("Ingrese el anio de nacimiento del Jugador: ");
-                            String anoNacimiento = sc.next();
-                            System.out.print("Ingrese el numero de Estrellas del Jugador(1-5): ");
-                            int numeroEstrellas = sc.nextInt();
-                            int contPateadores = 0;
-                            int contTiradores = 0;
-                            while (numeroEstrellas < 1 || numeroEstrellas > 5) {
-                                System.out.println("Debe ser entre 1 y 5");
+                            if (listaEquipos.get(posicionEquipo).ListaJugadores.size() == 5) {
+                                System.out.print("Ingrese el nombre del Jugador: ");
+                                String nombreJugador = sc.next();
+                                System.out.print("Ingrese el apodo del Jugador: ");
+                                String apodo = sc.next();
+                                System.out.print("Ingrese el numero de camiseta del Jugador: ");
+                                int numeroCamiseta = sc.nextInt();
+                                System.out.print("Ingrese el equipo de Futbol favorito del Jugador: ");
+                                String equipoFutfav = sc.next();
+                                System.out.print("Ingrese el equipo de Basketball favorito del Jugador: ");
+                                String equipoBasfav = sc.next();
+                                System.out.print("Ingrese el jugador Favorito del Jugador: ");
+                                String jugadorFav = sc.next();
+                                System.out.print("Ingrese la edad del Jugador: ");
+                                int edad = sc.nextInt();
+                                System.out.print("Ingrese el anio de nacimiento del Jugador: ");
+                                String anoNacimiento = sc.next();
                                 System.out.print("Ingrese el numero de Estrellas del Jugador(1-5): ");
-                                numeroEstrellas = sc.nextInt();
-                            }
-                            for (int i = 0; i < listaEquipos.get(posicionEquipo).ListaJugadores.size(); i++) {
-                                if (listaEquipos.get(posicionEquipo).ListaJugadores.get(i) instanceof Pateador) {
-                                    contPateadores++;
-                                } else {
-                                    contTiradores++;
+                                int numeroEstrellas = sc.nextInt();
+                                int contPateadores = 0;
+                                int contTiradores = 0;
+                                while (numeroEstrellas < 1 || numeroEstrellas > 5) {
+                                    System.out.println("Debe ser entre 1 y 5");
+                                    System.out.print("Ingrese el numero de Estrellas del Jugador(1-5): ");
+                                    numeroEstrellas = sc.nextInt();
                                 }
-                            }
-                            System.out.println("1)Pateador\n"
-                                    + "2)Tirador");
-                            System.out.print("Ingrese el tipo de jugador: ");
-                            int tipoJugador = sc.nextInt();
-                            while (tipoJugador < 1 || tipoJugador > 2) {
-                                System.out.print("Ingrese el tipo de jugador: ");
-                                tipoJugador = sc.nextInt();
-                            }
-                            if (tipoJugador == 1) {
-                                if (contPateadores <= 3) {
-                                    System.out.print("Ingrese la habilidad pateadora del pateador(1-100): ");
-                                    int hablidadPateador = sc.nextInt();
-                                    while (hablidadPateador < 1 || hablidadPateador > 100) {
-                                        System.out.println("Entre 1 y 100");
-                                        System.out.print("Ingrese la habilidad pateadora del pateador(1-100): ");
-                                        hablidadPateador = sc.nextInt();
-                                    }
-                                    System.out.print("Ingrese la fuerza del pateador(1-100): ");
-                                    int fuerza = sc.nextInt();
-                                    while (fuerza < 1 || fuerza > 100) {
-                                        System.out.println("Entre 1 y 100");
-                                        System.out.print("Ingrese la habilidad del pateador(1-100): ");
-                                        fuerza = sc.nextInt();
-                                    }
-                                    System.out.print("Ingrese la habilidad regateadora del pateador(1-100): ");
-                                    int habilidadRegateadora = sc.nextInt();
-                                    while (habilidadRegateadora < 1 || habilidadRegateadora > 100) {
-                                        System.out.println("Entre 1 y 100");
-                                        System.out.print("Ingrese la habilidad del pateador(1-100): ");
-                                        habilidadRegateadora = sc.nextInt();
-                                    }
-                                    listaEquipos.get(posicionEquipo).getListaJugadores().add(new Pateador(hablidadPateador, fuerza, habilidadRegateadora, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
-                                } else {
-                                    System.out.println("Ya tiene la cantidad maxima de Pateadores");
-                                }
-                                if (tipoJugador == 2) {
-                                    if (contTiradores <= 2) {
-                                        System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
-                                        int tiro3 = sc.nextInt();
-                                        while (tiro3 < 1 || tiro3 > 100) {
-                                            System.out.println("Entre 1 y 100");
-                                            System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
-                                            tiro3 = sc.nextInt();
-                                        }
-                                        System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
-                                        int tiro2 = sc.nextInt();
-                                        while (tiro2 < 1 || tiro2 > 100) {
-                                            System.out.println("Entre 1 y 100");
-                                            System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
-                                            tiro2 = sc.nextInt();
-                                        }
-                                        System.out.print("Ingrese el manejo del balon del tirador(1-100): ");
-                                        int manejoBalon = sc.nextInt();
-                                        while (manejoBalon < 1 || manejoBalon > 100) {
-                                            System.out.println("Entre 1 y 100");
-                                            System.out.print("Ingrese la habilidad del pateador(1-100): ");
-                                            manejoBalon = sc.nextInt();
-                                        }
-                                        listaEquipos.get(posicionEquipo).getListaJugadores().add(new Tirador(tiro3, tiro2, manejoBalon, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                                for (int i = 0; i < listaEquipos.get(posicionEquipo).ListaJugadores.size(); i++) {
+                                    if (listaEquipos.get(posicionEquipo).ListaJugadores.get(i) instanceof Pateador) {
+                                        contPateadores++;
                                     } else {
-                                        System.out.println("Ya tiene la cantidad maxima de Tiradores");
+                                        contTiradores++;
                                     }
                                 }
+                                System.out.println("1)Pateador\n"
+                                        + "2)Tirador");
+                                System.out.print("Ingrese el tipo de jugador: ");
+                                int tipoJugador = sc.nextInt();
+                                while (tipoJugador < 1 || tipoJugador > 2) {
+                                    System.out.print("Ingrese el tipo de jugador: ");
+                                    tipoJugador = sc.nextInt();
+                                }
+                                if (tipoJugador == 1) {
+                                    if (contPateadores <= 3) {
+                                        System.out.print("Ingrese la habilidad pateadora del pateador(1-100): ");
+                                        int hablidadPateador = sc.nextInt();
+                                        while (hablidadPateador < 1 || hablidadPateador > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la habilidad pateadora del pateador(1-100): ");
+                                            hablidadPateador = sc.nextInt();
+                                        }
+                                        System.out.print("Ingrese la fuerza del pateador(1-100): ");
+                                        int fuerza = sc.nextInt();
+                                        while (fuerza < 1 || fuerza > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la fuerza del pateador(1-100): ");
+                                            fuerza = sc.nextInt();
+                                        }
+                                        System.out.print("Ingrese la habilidad regateadora del pateador(1-100): ");
+                                        int habilidadRegateadora = sc.nextInt();
+                                        while (habilidadRegateadora < 1 || habilidadRegateadora > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la habilidad regateadora del pateador(1-100): ");
+                                            habilidadRegateadora = sc.nextInt();
+                                        }
+                                        listaEquipos.get(posicionEquipo).getListaJugadores().add(new Pateador(hablidadPateador, fuerza, habilidadRegateadora, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                                    } else {
+                                        System.out.println("Ya tiene la cantidad maxima de Pateadores");
+                                    }
 
+                                    if (tipoJugador == 2) {
+                                        if (contTiradores <= 2) {
+                                            System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
+                                            int tiro3 = sc.nextInt();
+                                            while (tiro3 < 1 || tiro3 > 100) {
+                                                System.out.println("Entre 1 y 100");
+                                                System.out.print("Ingrese la habilidad de tiro de 3 del tirador(1-100): ");
+                                                tiro3 = sc.nextInt();
+                                            }
+                                            System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
+                                            int tiro2 = sc.nextInt();
+                                            while (tiro2 < 1 || tiro2 > 100) {
+                                                System.out.println("Entre 1 y 100");
+                                                System.out.print("Ingrese la habilidad de tiro de 2 tirador(1-100): ");
+                                                tiro2 = sc.nextInt();
+                                            }
+                                            System.out.print("Ingrese el manejo del balon del tirador(1-100): ");
+                                            int manejoBalon = sc.nextInt();
+                                            while (manejoBalon < 1 || manejoBalon > 100) {
+                                                System.out.println("Entre 1 y 100");
+                                                System.out.print("Ingrese el manejo de balon del tirador(1-100): ");
+                                                manejoBalon = sc.nextInt();
+                                            }
+                                            listaEquipos.get(posicionEquipo).getListaJugadores().add(new Tirador(tiro3, tiro2, manejoBalon, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                                        } else {
+                                            System.out.println("Ya tiene la cantidad maxima de Tiradores");
+                                        }
+                                    }
+
+                                }
                             }
                         }
                         if (opcionJugador == 2) {
@@ -411,17 +414,17 @@ public class Jugador {
                                     listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setJugadorFav(jugadorFav);
                                 }
                                 if (opcionModificar == 7) {
-                                    System.out.print("Ingrese el edad del Jugador: ");
+                                    System.out.print("Ingrese la edad del Jugador: ");
                                     int edad = sc.nextInt();
                                     listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setEdad(edad);
                                 }
                                 if (opcionModificar == 8) {
-                                    System.out.print("Ingrese el anoNacimiento del Jugador: ");
+                                    System.out.print("Ingrese el anio de nacimiento del Jugador: ");
                                     String anoNacimiento = sc.next();
                                     listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setAnoNacimiento(anoNacimiento);
                                 }
                                 if (opcionModificar == 9) {
-                                    System.out.print("Ingrese el numeroEstrella del Jugador: ");
+                                    System.out.print("Ingrese el numero de Estrellas del Jugador: ");
                                     int numeroEstrella = sc.nextInt();
                                     while (numeroEstrella < 1 || numeroEstrellas > 5) {
                                         System.out.println("Debe ser entre 1 y 5");
@@ -432,33 +435,48 @@ public class Jugador {
                                 }
                                 if (opcionModificar == 10) {
                                     if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Pateador) {
-                                        System.out.print("Ingrese el habilidadPateadora del Jugador: ");
+                                        System.out.print("Ingrese la habilidad Pateadora del Jugador: ");
                                         int habilidadPateadora = sc.nextInt();
                                         while (habilidadPateadora < 1 || habilidadPateadora > 100) {
                                             System.out.println("Entre 1 y 100");
                                             System.out.print("Ingrese la habilidad pateadora del pateador(1-100): ");
                                             habilidadPateadora = sc.nextInt();
                                         }
-                                        listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador).setNumeroEstrellas(numeroEstrella);
+                                        ((Pateador) listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador)).setHabilidadPateador(habilidadPateadora);
                                     } else {
                                         System.out.println("No es un pateador");
                                     }
                                 }
                                 if (opcionModificar == 11) {
                                     if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Pateador) {
-                                        System.out.print("Ingrese el habilidadPateadora del Jugador: ");
-                                        String habilidadPateadora = sc.next();
+                                        System.out.print("Ingrese la habilidad Regateadora del Jugador: ");
+                                        int habilidadRegateadora = sc.nextInt();
+                                        while (habilidadRegateadora < 1 || habilidadRegateadora > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la habilidad regateadora del pateador(1-100): ");
+                                            habilidadRegateadora = sc.nextInt();
+                                        }
+                                        ((Pateador) listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador)).setHabilidadRegateadora(habilidadRegateadora);
                                     } else {
                                         System.out.println("No es un pateador");
                                     }
                                 }
                                 if (opcionModificar == 12) {
                                     if (listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador) instanceof Pateador) {
-                                        System.out.print("Ingrese el habilidadPateadora del Jugador: ");
-                                        String habilidadPateadora = sc.next();
+                                        System.out.print("Ingrese la fuerza del Jugador: ");
+                                        int fuerza = sc.nextInt();
+                                        while (fuerza < 1 || fuerza > 100) {
+                                            System.out.println("Entre 1 y 100");
+                                            System.out.print("Ingrese la fuerza del pateador(1-100): ");
+                                            fuerza = sc.nextInt();
+                                        }
+                                        ((Pateador) listaEquipos.get(posicionEquipo).ListaJugadores.get(posicionJugador)).setFuerza(fuerza);
                                     } else {
                                         System.out.println("No es un pateador");
                                     }
+                                }
+                                if (op) {
+
                                 }
                             } else {
                                 System.out.println("No existe ese nodo");
@@ -474,5 +492,4 @@ public class Jugador {
             }
         }
     }
-
 }
