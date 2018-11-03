@@ -12,7 +12,6 @@ public class Lab4_CarlosNuila_DanielAgurcia {
 
     public static void main(String[] args) {
         int opcionMenu = 0;
-        System.out.println("perro");
         ArrayList<Equipo> listaEquipos = new ArrayList();
         while (opcionMenu != 4) {
             System.out.println("1)Administrar Equipo\n"
