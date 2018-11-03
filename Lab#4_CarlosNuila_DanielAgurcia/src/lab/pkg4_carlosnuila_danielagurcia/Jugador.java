@@ -114,7 +114,9 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "nombre=" + nombre + ", apodo=" + apodo + ", numeroCamiseta=" + numeroCamiseta + ", equipoFutFav=" + equipoFutFav + ", equipoBasFav=" + equipoBasFav + ", jugadorFav=" + jugadorFav + ", edad=" + edad + ", anoNacimiento=" + anoNacimiento + ", numeroEstrellas=" + numeroEstrellas + '}';
+        return "Jugador{" + "Nombre del Jugador = " + nombre + "    Apodo=" + apodo + " Numero de Camiseta=" + numeroCamiseta + 
+                "\nEquipo de Fut Fav=" + equipoFutFav + "   EquipoBasFav=" + equipoBasFav + "   JugadorFav=" + jugadorFav + 
+                "\nEdad=" + edad + "    anioNacimiento=" + anoNacimiento + "    numeroEstrellas=" + numeroEstrellas + '}';
     }
 
     public double Atacar(int tipoTiro) {
