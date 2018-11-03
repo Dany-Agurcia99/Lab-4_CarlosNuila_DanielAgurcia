@@ -11,7 +11,7 @@ public class Pateador extends Jugador {
     }
 
     public Pateador(int habilidadPateador, int fuerza, int habilidadRegateadora, String nombre, String apodo, int numeroCamiseta, String equipoFutFav, String equipoBasFav, String jugadorFav, int edad, String anoNacimiento, int numeroEstrellas) {
-        super(nombre, apodo, numeroCamiseta, equipoFutFav, equipoBasFav, jugadorFav, edad, anoNacimiento, numeroEstrellas,0);
+        super(nombre, apodo, numeroCamiseta, equipoFutFav, equipoBasFav, jugadorFav, edad, anoNacimiento, numeroEstrellas, 0);
         this.habilidadPateador = habilidadPateador;
         this.fuerza = fuerza;
         this.habilidadRegateadora = habilidadRegateadora;
@@ -43,7 +43,7 @@ public class Pateador extends Jugador {
 
     @Override
     public String toString() {
-        return "Pateador{" + "habilidadPateador=" + habilidadPateador + ", fuerza=" + fuerza + ", habilidadRegateadora=" + habilidadRegateadora + '}';
+        return "Pateador{" + "habilidad de pateador = " + habilidadPateador + "\n fuerza = " + fuerza + "\n habilidad Regateadora = " + habilidadRegateadora + '}';
     }
 
     public double Atacar(int tipoTiro) {

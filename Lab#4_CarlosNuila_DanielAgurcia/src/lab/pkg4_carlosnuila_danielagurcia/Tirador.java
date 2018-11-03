@@ -11,7 +11,7 @@ public class Tirador extends Jugador {
     }
 
     public Tirador(int tiro3, int tiro2, int manejoBalon, String nombre, String apodo, int numeroCamiseta, String equipoFutFav, String equipoBasFav, String jugadorFav, int edad, String anoNacimiento, int numeroEstrellas) {
-        super(nombre, apodo, numeroCamiseta, equipoFutFav, equipoBasFav, jugadorFav, edad, anoNacimiento, numeroEstrellas,0);
+        super(nombre, apodo, numeroCamiseta, equipoFutFav, equipoBasFav, jugadorFav, edad, anoNacimiento, numeroEstrellas, 0);
         this.tiro3 = tiro3;
         this.tiro2 = tiro2;
         this.manejoBalon = manejoBalon;
@@ -43,7 +43,7 @@ public class Tirador extends Jugador {
 
     @Override
     public String toString() {
-        return "Tirador{" + "tiro3=" + tiro3 + ", tiro2=" + tiro2 + ", manejoBalon=" + manejoBalon + '}';
+        return "Tirador{" + "Habilidad para tirar de 3 = " + tiro3 + "\nHabilidad para tirar de 2 = " + tiro2 + "\n manejo de Balon=" + manejoBalon + '}';
     }
 
     public double Atacar(int tipoTiro) {
