@@ -18,6 +18,7 @@ public class Lab4_CarlosNuila_DanielAgurcia {
                     + "2)Administrar Jugadores\n"
                     + "3)Jugar\n"
                     + "4)Salir");
+            System.out.print("Ingrese la opcion: ");
             opcionMenu = sc.nextInt();
             if (opcionMenu == 1) {
                 int opcionEquipo = 0;
@@ -211,9 +212,9 @@ public class Lab4_CarlosNuila_DanielAgurcia {
                                             habilidadRegateadora = sc.nextInt();
                                         }
                                         listaEquipos.get(posicionEquipo).getListaJugadores().add(new Pateador(hablidadPateador, fuerza, habilidadRegateadora, nombreJugador, apodo, numeroCamiseta, equipoFutfav, equipoBasfav, jugadorFav, edad, anoNacimiento, numeroEstrellas));
+                                    } else {
+                                        System.out.println("Ya tiene la cantidad maxima de Pateadores");
                                     }
-                                } else {
-                                    System.out.println("Ya tiene la cantidad maxima de Pateadores");
                                 }
                                 if (tipoJugador == 2) {
                                     if (contTiradores <= 2) {
